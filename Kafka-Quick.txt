@@ -1,0 +1,54 @@
+•Message Ordering is important then producer parameter 'inflight-message..' must be set to 1. This impacts the throughput. 
+•To avoid data loss and data inconsistency, set the broker parameter 'unclean.leader.election' must be disabled. 'Min.insync.replica' also need to set correctly to handle dataloss.
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•SQL Server Notes:
+
+Tracking Page Spilits:                            SELECT * FROM sys.dm_os_performance_counters WHERE counter_name ='PageSplits/sec'
+To check checksum setting for page_verify option: SELECT name, page_verify_option_desc FROM sys.databases;
+To check if the server is under CPU pressure:     SELECT AVG(runnable_tasks_count) FROM sys.dm_os_schedulers WHERE status = 'VISIBLE ONLINE';
+
+
+9439614455
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2014-15:  5,50,000
+2015-16:  45*12 = 5,50,000
+2016-17:  50*12 = 5,50,000
+2017-18:  50*5 + 77*7 = 8,00,000
+2018-19:  9,00,000
+2019-20:  9,00,000
+2020-21:  9,00,000
+2021-22:  8,00,000
+
+lumpsum:  12,00,000
+lumpsum:  11,00,000
